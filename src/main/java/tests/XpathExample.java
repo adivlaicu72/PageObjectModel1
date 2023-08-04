@@ -1,9 +1,9 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import org.openqa.selenium.JavascriptExecutor;
 
 import utils.BaseTest;
 
@@ -41,16 +41,33 @@ public class XpathExample extends BaseTest {
 		
 		driver.findElement(By.xpath("//a[contains(text(), 'orde')]")).click();
 		
-		//th[contains(@class, 'woocommerce-orders-table__header')]
-		//echivlent cu css-ul =>
-		//th[class*='woocommerce-orders-table__header')]
 		
-		//th[contains(@class, 'woocommerce-orders-table')]/span[contains(text(), 'Order')]
+		////th[contains(@class, 'woocommerce-orders-table__header')]
+		//  th[class*='woocommerce-orders-table__header']
 		
-		//jse.executeScript("arguments[0].setAttribute('style', 'background:orange; border:5px solid red')", price10_20);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		
-		(//th[contains(@class, 'woocommerce-orders-table')]/span)[3]
-		WebElement orderTabHeader = driver.findElement(By.xpath("//th[contains(@class, 'woocommerce-orders-table')]/span[contains(text(), 'Order')]"));
+		WebElement orderTableHeader = driver.findElement
+				(By.xpath("//th[contains(@class, 'woocommerce-orders-table')]/span[contains(text(), 'Order')]"));
+		
+		jse.executeScript("arguments[0].setAttribute('style', 'background:orange; border:5px solid red')", orderTableHeader);
+
+		//index based
+		WebElement statusTableHeader =  driver.findElement
+				(By.xpath("(//th[contains(@class, 'woocommerce-orders-table')]/span)[3]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:orange; border:5px solid red')", statusTableHeader);
+
+		
+		WebElement order1721 = driver.findElement
+				(By.xpath("//td[contains(@class, 'woocommerce-orders-table__cell')][@data-title='Order']/a[contains(text(), '1721')]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:blue; border:5px solid red')", order1721);
+
+	
+		WebElement orders =  driver.findElement
+				(By.xpath("//td[contains(@class, 'woocommerce-orders-table__cell')][@data-title='Order']/a[not(contains(text(), '1721'))]"));
+		
+		jse.executeScript("arguments[0].setAttribute('style', 'background:red; border:5px solid red')", orders);
+
 		
 	}
 	

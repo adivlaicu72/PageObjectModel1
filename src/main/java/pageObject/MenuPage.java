@@ -18,7 +18,7 @@ public class MenuPage {
 	public By contactsLink = By.linkText("CONTACTS");
 	//WeBelement loginLInk =driver.findElement(By.cssSelector("li[class='menu_user_login']"));
 	public By loginLink = By.cssSelector("li[class='menu_user_login']");
-	
+	public By shopLink =  By.linkText("BOOKS");
 	
 	//metode specifice
 	public void navigateTo(By locator) {
