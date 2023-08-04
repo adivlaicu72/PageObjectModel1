@@ -27,10 +27,6 @@ public class BaseTest {
 		Thread.sleep(4000);//bad practice
 		
 		driver.quit();//inchide tot browserul cu toate taburile
+	
 	}
-	
-	
-	
-	
-	
 }
