@@ -28,7 +28,7 @@ public class ActionClassExample extends BaseTest{
 		menu.navigateTo(menu.blogSubMenuMasonrysubMenu);	
 	}
 	
-	//@Test
+	@Test
 	public void dragAndDropTest() {
 		MenuPage menu =  new MenuPage(driver);
 		menu.navigateTo(menu.shopLink);
