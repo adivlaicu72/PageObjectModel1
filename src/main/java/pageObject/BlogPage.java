@@ -58,7 +58,7 @@ public WebDriver driver;
 	}
 	
 	public void checkcommentIsAwaitingModerationPresent() {
-	boolean commentIsAwaitingModerationPresent = commentIsAwaitingModeration.equals(commentIsAwaitingModeration);
+	//boolean commentIsAwaitingModerationPresent = commentIsAwaitingModeration.equals(commentIsAwaitingModeration);
 	assertTrue(commentIsAwaitingModeration, "Your comment is awaiting moderation");
 	}
 
