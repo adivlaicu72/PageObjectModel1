@@ -25,9 +25,21 @@ public class MenuPage {
 	public By aboutLink =  By.linkText("ABOUT");
 	public By blogSubMenuMasonry = By.xpath("//a[contains(text(), 'Masonry')]");
 	public By blogSubMenuMasonrysubMenu = By.xpath("//a[contains(text(), 'Masonry 2')]");
-	public By blogSubmenuClassic = By.xpath("//a[contains(text(), 'Classic')]") ;
+	public By iconSearch = By.cssSelector("button[title='Open search']");
+	public By searchField = By.cssSelector("input[class='search_field']");
 
+	
+	
+	
+	public void search(String text) {
+		
+		driver.findElement(iconSearch).click();
+		driver.findElement(searchField).clear();
+		driver.findElement(searchField).sendKeys(text);
+		driver.findElement(iconSearch).click();
 
+	}
+	
 	
 	//metode specifice
 	public void navigateTo(By locator) {
@@ -45,6 +57,6 @@ public class MenuPage {
 	
 	//MenuPage menu = new MenuPage(driver);
 	//menu.navigateTo(menu.loginLink);
-	//menu.navigateTo(menu.contactsLink);
+	//menu.navigateTo(menu.conatctsLink);
 
 }

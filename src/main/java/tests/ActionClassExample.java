@@ -60,53 +60,59 @@ public class ActionClassExample extends BaseTest{
 			.sendKeys(Keys.TAB, Keys.ENTER)
 			//.sendKeys().clickAndHold().moveToElement(element).release()
 			.perform();
-					
-	}	
+	
+	}
 	
 	@Test
-	public void copyPasteExample() {
+	public void copyPasteExample() throws InterruptedException {
 		
-		WebElement loginLink = driver.findElement(By.linkText("Login"));
+		WebElement loginLink =  driver.findElement(By.linkText("Login"));
 		loginLink.click();
-		
 		
 		WebElement username = driver.findElement(By.id("log"));
 		WebElement password = driver.findElement(By.id("password"));
 		
 		Actions action = new Actions(driver);
 		
-		//username.click(); varianta clasica
+		//username.click();
 		action.click(username).perform();
-		
-		//username.sendKeys("TestUser"); varianta clasica
+		//username.sendKeys("TestUser");
 		action.sendKeys(username, "TestUser").perform();
 		
 		
-		Keys ctrlKey = Platform.getCurrent().is(Platform.MAC) ? Keys.COMMAND : Keys.CONTROL;
+		Keys crtlKey = Platform.getCurrent().is(Platform.MAC) ? Keys.COMMAND : Keys.CONTROL;
 		
 		System.out.println("Before copy paste :" +password.getAttribute("value"));
-		
+
 		//selectez textul pe care vreau sa il copiez
-		action.keyDown(ctrlKey).sendKeys("a").keyUp(ctrlKey).perform();
-		action.keyDown(ctrlKey).sendKeys("c").keyUp(ctrlKey).perform();
+		
+		//selectie cu CTRL+ A
+		//action.keyDown(crtlKey).sendKeys("a").keyUp(crtlKey).perform();
+		
+		//selectie cu doubleCLick()
+		//action.doubleClick().keyDown(crtlKey).sendKeys("c").keyUp(crtlKey).perform();
+		
+		//selectie din sageti
+		action
+			.keyDown(Keys.SHIFT)
+			.sendKeys(Keys.ARROW_LEFT)
+			.sendKeys(Keys.ARROW_UP)
+			.keyUp(Keys.SHIFT)
+			.keyDown(crtlKey)
+			.sendKeys("c")
+			.keyUp(crtlKey)
+			.perform();
+			
 		
 		action.click(password).perform();
-		action.keyDown(ctrlKey).sendKeys("v").keyUp(ctrlKey).perform();
+		action.keyDown(crtlKey).sendKeys("v").keyUp(crtlKey).perform();
+
 		
+		System.out.println("AFter copy paste :" +password.getAttribute("value"));
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		Thread.sleep(3000);
 		
 	}
+	
 	
 }
