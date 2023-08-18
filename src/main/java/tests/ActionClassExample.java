@@ -2,7 +2,9 @@ package tests;
 
 import java.awt.Menu;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
@@ -28,7 +30,7 @@ public class ActionClassExample extends BaseTest{
 		menu.navigateTo(menu.blogSubMenuMasonrysubMenu);	
 	}
 	
-	@Test
+	//@Test
 	public void dragAndDropTest() {
 		MenuPage menu =  new MenuPage(driver);
 		menu.navigateTo(menu.shopLink);
@@ -39,7 +41,7 @@ public class ActionClassExample extends BaseTest{
 		
 	}
 	
-	@Test
+	//@Test
 	public void sendKeysExample() {
 	
 		MenuPage menu =  new MenuPage(driver);
@@ -58,10 +60,53 @@ public class ActionClassExample extends BaseTest{
 			.sendKeys(Keys.TAB, Keys.ENTER)
 			//.sendKeys().clickAndHold().moveToElement(element).release()
 			.perform();
+					
+	}	
+	
+	@Test
+	public void copyPasteExample() {
+		
+		WebElement loginLink = driver.findElement(By.linkText("Login"));
+		loginLink.click();
+		
+		
+		WebElement username = driver.findElement(By.id("log"));
+		WebElement password = driver.findElement(By.id("password"));
+		
+		Actions action = new Actions(driver);
+		
+		//username.click(); varianta clasica
+		action.click(username).perform();
+		
+		//username.sendKeys("TestUser"); varianta clasica
+		action.sendKeys(username, "TestUser").perform();
+		
+		
+		Keys ctrlKey = Platform.getCurrent().is(Platform.MAC) ? Keys.COMMAND : Keys.CONTROL;
+		
+		System.out.println("Before copy paste :" +password.getAttribute("value"));
+		
+		//selectez textul pe care vreau sa il copiez
+		action.keyDown(ctrlKey).sendKeys("a").keyUp(ctrlKey).perform();
+		action.keyDown(ctrlKey).sendKeys("c").keyUp(ctrlKey).perform();
+		
+		action.click(password).perform();
+		action.keyDown(ctrlKey).sendKeys("v").keyUp(ctrlKey).perform();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
 	}
-	
 	
 }
