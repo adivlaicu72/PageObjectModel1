@@ -1,7 +1,5 @@
 package tests;
 
-import java.awt.Menu;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Platform;

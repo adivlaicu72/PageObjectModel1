@@ -20,8 +20,8 @@ public WebDriver driver;
 	public By authorTextArea = By.id("author");
 	public By emailTextArea = By.id("email");
 	public By urlTextArea = By.id("url");
-	public By postCommentButton = By.xpath("//p[@class='form-submit']");
-	public By commentIsAwaitingModeration = By.cssSelector("div[class='comment_not_approved']");
+	public By postCommentButton = By.xpath("//input[@id='send_comment']");
+	public By commentIsAwaitingModeration = By.xpath("//div[@class='comment_not_approved']");
 	
 	
 	
@@ -57,15 +57,8 @@ public WebDriver driver;
 		postComment.click();
 	}
 	
-	public void checkcommentIsAwaitingModerationPresent() {
-	//boolean commentIsAwaitingModerationPresent = commentIsAwaitingModeration.equals(commentIsAwaitingModeration);
-	assertTrue(commentIsAwaitingModeration, "Your comment is awaiting moderation");
-	}
-
-	private void assertTrue(By commentIsAwaitingModeration2, String message) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	public boolean checkcommentIsAwaitingModerationPresent() {
+	return driver.findElement(commentIsAwaitingModeration).isDisplayed();
+	     }	
 	
 }

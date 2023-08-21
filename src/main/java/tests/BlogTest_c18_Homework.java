@@ -1,5 +1,7 @@
 package tests;
 
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 
 import utils.BaseTest;
@@ -8,7 +10,7 @@ import pageObject.BlogPage;
 
 public class BlogTest_c18_Homework extends BaseTest{
 	
-	@Test(priority=1)
+	@Test()
 	public void addCommentBlogTest() {
 		
 		MenuPage menu =  new MenuPage(driver);
@@ -18,7 +20,8 @@ public class BlogTest_c18_Homework extends BaseTest{
 		blog.clickReadMoreButton();
 		blog.addComment();
 		blog.clickPostCommentButton();
-		blog.checkcommentIsAwaitingModerationPresent();	
+		
+		assertTrue(blog.checkcommentIsAwaitingModerationPresent());
 	
 	}	
 
