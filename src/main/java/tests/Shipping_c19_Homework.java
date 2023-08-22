@@ -16,7 +16,7 @@ public class Shipping_c19_Homework extends BaseTest{
 	
 	//deschidem keybooks.ro si facem login
 	
-	@Test(priority=1)
+	@Test()
 	public void loginAccess() throws InterruptedException {
 		
 		MenuPage menu =  new MenuPage(driver);

@@ -19,7 +19,36 @@ public class ShopPage {
 	public By orderDropDown = By.xpath("//select[@class='orderby']");
 	public By priceSliderInitalPosition = By.xpath("//span[@style='left: 0%;']");
 	public By priceSliderFinalPosition = By.xpath("//span[@style='left: 100%;']");
+	
+	public By bookCookingWithLove = By.xpath("//a[contains(text(), 'Cooking with love')]");
+	public By titleBookCookingWithLove = By.xpath("//h1[contains(text(), 'Cooking with love')]");
+	public By productGalleryTrigger = By.xpath("");
+	public By rating = By.xpath("//div[@class='star-rating']");
+	public By price = By.xpath("//span[bdi='$18.49']/../../del/child::*/bdi");
 
+	//metode specifice
+	public void navigateTo(By locator) {
+		driver.findElement(locator).click();
+	}
+	
+	public boolean checkTitleleBookCookingWithLovePresent() {
+		return driver.findElement(titleBookCookingWithLove).isDisplayed();
+		     }	
+	
+	
+	public boolean checkProductGalleryTriggerPresent() {
+		return driver.findElement(productGalleryTrigger).isDisplayed();
+		     }	
+	
+	public boolean checkRatingPresent() {
+		return driver.findElement(rating).isDisplayed();
+		     }	
+	
+	public boolean checkPricePresent() {
+		return driver.findElement(price).isDisplayed();
+		     }	
+	
+	
 	
 	
 	public void dragAndDrop(By locator, int x, int y) {
