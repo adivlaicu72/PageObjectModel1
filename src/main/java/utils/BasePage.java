@@ -4,6 +4,7 @@ import pageObject.ContactPage;
 import pageObject.LoginPage;
 import pageObject.MenuPage;
 import pageObject.ShopPage;
+import pageObject.EventsPage;
 
 public class BasePage  extends BaseTest {
 		
@@ -11,5 +12,6 @@ public class BasePage  extends BaseTest {
 	public MenuPage menu =  new MenuPage(driver);
 	public ShopPage shop = new ShopPage(driver);
 	public LoginPage login =  new LoginPage(driver);
+	public EventsPage events = new EventsPage(driver);
 	
 }
