@@ -10,7 +10,7 @@ import utils.BaseTest;
 public class JavascriptExecutorTest extends BaseTest{
 	
 	
-	//@Test
+	@Test
 	public void example1() {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		//driver.get("http://emag.ro");
@@ -36,7 +36,7 @@ public class JavascriptExecutorTest extends BaseTest{
 		
 	}
 	
-	@Test
+	//@Test
 	public void example2() throws InterruptedException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		//alternativa pentru click

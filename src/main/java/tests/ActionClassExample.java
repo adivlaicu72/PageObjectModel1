@@ -14,7 +14,7 @@ import utils.BaseTest;
 
 public class ActionClassExample extends BaseTest{
 
-	//@Test
+	@Test
 	public void hoverTest() throws InterruptedException {
 		MenuPage menu =  new MenuPage(driver);
 		menu.hoverElement(menu.blogLink);
@@ -28,7 +28,7 @@ public class ActionClassExample extends BaseTest{
 		menu.navigateTo(menu.blogSubMenuMasonrysubMenu);	
 	}
 	
-	//@Test
+	@Test
 	public void dragAndDropTest() {
 		MenuPage menu =  new MenuPage(driver);
 		menu.navigateTo(menu.shopLink);
@@ -61,7 +61,7 @@ public class ActionClassExample extends BaseTest{
 	
 	}
 	
-	@Test
+	//@Test
 	public void copyPasteExample() throws InterruptedException {
 		
 		WebElement loginLink =  driver.findElement(By.linkText("Login"));

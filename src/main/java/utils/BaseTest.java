@@ -14,8 +14,8 @@ public class BaseTest {
 	public static WebDriver driver;
 	public BasePage app;
 	
-//	@BeforeClass(alwaysRun = true)
-	@BeforeMethod(alwaysRun = true)
+	@BeforeClass(alwaysRun = true)
+//	@BeforeMethod(alwaysRun = true)
 	public void setup() {
 		//System.setProperty("webdriver.chrome.driver", "path catre/chromedriver.exe")
 		driver = new ChromeDriver();
@@ -26,8 +26,8 @@ public class BaseTest {
 		app = new BasePage();
 	}
 	
-//	@AfterClass
-	@AfterMethod
+	@AfterClass
+//	@AfterMethod
 	public void teardown() throws InterruptedException {
 		Thread.sleep(4000);//bad practice
 		

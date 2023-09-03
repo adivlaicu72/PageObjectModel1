@@ -27,6 +27,13 @@ public class MenuPage {
 	
 	public By blogSubMenuMasonry = By.xpath("//a[contains(text(), 'Masonry')]");
 	public By blogSubMenuMasonrysubMenu = By.xpath("//a[contains(text(), 'Masonry 2')]");
+	
+	public By blogSubMenuPostFormats = By.xpath("//a[contains(text(), 'Post Formats')]");
+	public By audioPost = By.xpath("//a[contains(text(), 'Audio post')]");
+	
+	public By musicSliderPosition = By.xpath("//span[@style='left: 0px; transform: scaleX(0);']");
+	public By volumeSliderPosition = By.xpath("//a[@aria-valuemin='0']");
+	
 	public By iconSearch = By.cssSelector("button[class*='search_submit']");
 	public By searchField = By.cssSelector("input[class='search_field']");
 
@@ -55,6 +62,15 @@ public class MenuPage {
 		action.moveToElement(element).perform();
 		
 	}
+	
+	public void dragAndDrop(By locator, int x, int y) {
+		WebElement element =  driver.findElement(locator);
+		Actions action = new Actions(driver);
+		//action.dragAndDropBy(element, x, y).perform();
+		action.moveToElement(element).clickAndHold(element).moveByOffset(x, y).release().perform();
+
+	}
+	
 	
 	
 	//MenuPage menu = new MenuPage(driver);
