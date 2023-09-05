@@ -29,10 +29,14 @@ public class MenuPage {
 	public By blogSubMenuMasonrysubMenu = By.xpath("//a[contains(text(), 'Masonry 2')]");
 	
 	public By blogSubMenuPostFormats = By.xpath("//a[contains(text(), 'Post Formats')]");
+	
 	public By audioPost = By.xpath("//a[contains(text(), 'Audio post')]");
+	public By galleryFormat = By.xpath("//a[contains(text(), 'Gallery Format')]");
 	
 	public By musicSliderPosition = By.xpath("//span[@style='left: 0px; transform: scaleX(0);']");
 	public By volumeSliderPosition = By.xpath("//a[@aria-valuemin='0']");
+	
+	
 	
 	public By iconSearch = By.cssSelector("button[class*='search_submit']");
 	public By searchField = By.cssSelector("input[class='search_field']");
