@@ -29,7 +29,7 @@ public class ScrollExample extends BaseTest{
 
 	}
 	
-	//@Test
+	@Test
 	public void scrollToElement() {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		Actions action = new Actions(driver);
@@ -45,7 +45,7 @@ public class ScrollExample extends BaseTest{
 		
 	}
 	
-	@Test
+	//@Test
 	public void scrollTopAndBottom() throws InterruptedException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		Actions action = new Actions(driver);

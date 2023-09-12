@@ -22,9 +22,10 @@ public class ShopPage {
 	
 	public By bookCookingWithLove = By.xpath("//a[contains(text(), 'Cooking with love')]");
 	public By titleBookCookingWithLove = By.xpath("//h1[contains(text(), 'Cooking with love')]");
-	public By productGalleryTrigger = By.xpath("");
+	public By productGalleryTrigger = By.xpath("//div[@class='woocommerce-product-gallery__image']");
 	public By rating = By.xpath("//div[@class='star-rating']");
 	public By price = By.xpath("//span[bdi='$18.49']/../../del/child::*/bdi");
+	
 
 	//metode specifice
 	public void navigateTo(By locator) {

@@ -17,8 +17,9 @@ public class C21_Homework extends BaseTest{
 		menu.navigateTo(menu.blogSubMenuPostFormats);
 		menu.navigateTo(menu.audioPost);
 		
+		//menu.navigateTo(menu.playButton);
 		menu.dragAndDrop(menu.volumeSliderPosition, 50, 0);
-		menu.dragAndDrop(menu.musicSliderPosition, 200, 0);
+		menu.dragAndDrop(menu.musicSliderPosition, 30, 0);
 		
 		
 	}

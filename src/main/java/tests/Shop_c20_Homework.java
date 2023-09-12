@@ -19,7 +19,7 @@ public class Shop_c20_Homework extends BaseTest{
 	
 	assertTrue(shop.checkTitleleBookCookingWithLovePresent());
 	
-	//assertTrue(shop.checkProductGalleryTriggerPresent());
+	assertTrue(shop.checkProductGalleryTriggerPresent());
 	
 	assertTrue(shop.checkRatingPresent());
 	assertTrue(shop.checkPricePresent());

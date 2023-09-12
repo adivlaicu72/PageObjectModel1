@@ -23,6 +23,7 @@ public WebDriver driver;
 	public By shippingbillingAddButton = By.xpath("//a[contains(@class, 'edit')][contains(text(), 'Add')]");
 	
 	
+	
 	//metode specifice
 		public void navigateTo(By locator) {
 			driver.findElement(locator).click();
